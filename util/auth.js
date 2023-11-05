@@ -1,6 +1,6 @@
 const server = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBQpOkX0HwpEoJPNroFuPRDn-w_6Ru64_c'
 
-function createUser (){
+ function createUser (){
     axios.post(server,
         {
             email: email,
@@ -8,3 +8,4 @@ function createUser (){
             returnSecureToken: true
         })
 }
+export default createUser;
