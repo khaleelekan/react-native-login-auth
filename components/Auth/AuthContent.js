@@ -15,7 +15,7 @@ function AuthContent({ isLogin, onAuthenticate }) {
     password: false,
     confirmEmail: false,
     confirmPassword: false,
-  });
+  }); 
   const navigation = useNavigation()
   function switchAuthModeHandler() {
     if (isLogin){
