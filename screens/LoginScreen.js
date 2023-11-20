@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import AuthContent from '../components/Auth/AuthContent';
-import  login  from '../util/auth';
+import  login from '../util/auth';
 import LoadingOverlay from '../components/ui/LoadingOverlay';
 
 function LoginScreen() {
@@ -17,6 +17,7 @@ if (isAuthenticating){
   return <LoadingOverlay message='login in ...'/>
 }
   return <AuthContent isLogin onAuthenticate={loginHandler}/>;
+
 }
 
 
