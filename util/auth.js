@@ -3,12 +3,17 @@ import axios from 'axios';
 
 const API = 'AIzaSyBQpOkX0HwpEoJPNroFuPRDn-w_6Ru64_c'
 
- async function createUser (email, password){
-    const response = await axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key='+ API
-           ,{
-            email: email,
-            password: password,
-            returnSecureToken: true
-        })
+async function authenticate (mode ,email, password){
+    const url = `https://identitytoolkit.googleapis.com/v1/accounts:${mode}?key=${API}`
+    const response = await axios.post(url, {
+        email: email,
+        password: password,
+        returnSecureToken: true,
+    });
 }
-export default createUser;
+ export async function createUser (email, password){
+ await authenticate ('signUp', email, password);
+}
+ export async function login (email, password){
+ await authenticate ('signInWithPassword', email, password);
+}
