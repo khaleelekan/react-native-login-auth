@@ -14,10 +14,10 @@ function LoginScreen() {
   }
  
 if (isAuthenticating){ 
-  return <LoadingOverlay message='login in ...'/>
+  return <LoadingOverlay message='login in ...'/>;
 }
-  return <AuthContent isLogin onAuthenticate={loginHandler}/>;
 
+  return <AuthContent isLogin onAuthenticate={loginHandler}/>;
 }
 
 
