@@ -9,7 +9,14 @@ function LoginScreen() {
   async function loginHandler({email, password})
   {
     setIsAuthenticating(true);
-    await login(email, password);
+    try{
+      await login (email, password);
+    }catch (error){
+      Alert.alert(
+        'Authentication failed!',
+        "could not log in. try again"
+      );
+    }
     setIsAuthenticating(false);
   }
  
